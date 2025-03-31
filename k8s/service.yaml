@@ -1,1 +1,15 @@
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: boardgame-service
+  labels:
+    app: gameapp
+spec:
+  selector:
+    app: gameapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30080  # Specify a node port in the valid range (30000-32767)
+  type: NodePort
