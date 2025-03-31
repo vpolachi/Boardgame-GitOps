@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: boardgameapp
-          image: dockerr2021/boardgameapp:20250331-1
+          image: dockerr2021/boardgameapp:202503311
           ports:
             - containerPort: 8080  # Change if your app uses a different port
