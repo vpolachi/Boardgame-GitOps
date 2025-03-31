@@ -1,1 +1,21 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: boardgame-deployment
+  labels:
+    app: gameapp
+spec:
+  replicas: 2  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: gameapp
+  template:
+    metadata:
+      labels:
+        app: gameapp
+    spec:
+      containers:
+        - name: boardgameapp
+          image: dockerr2021/boardgameapp:cicd1.0
+          ports:
+            - containerPort: 8080  # Change if your app uses a different port
